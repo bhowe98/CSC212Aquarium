@@ -44,6 +44,7 @@ public class Aquarium extends GFX {
 	int fish1X = getWidth() + 100;
 	int fish2X = getWidth() + 300;
 	int fish3X = - 100;
+	int bubbleSpot = 100;
 	
 	Fish nemo = new Fish(Color.magenta, 250, 250, true);
 	Fish marlin = new Fish(Color.orange, 100, 100, false);
@@ -63,7 +64,10 @@ public class Aquarium extends GFX {
 		DrawFish.facingRight(g, Color.green, fish2X, 300);
 
 		// What if we wanted this little fish to swim, too?
-		DrawFish.smallFacingLeft(g, Color.red, fish3X, 100);
+		DrawFish.smallFacingRight(g, Color.red, fish3X, 100);
+		
+		// Draw a bubble!
+		DrawBubbles.bubbles(g, 100, bubbleSpot);
 
 		// Draw our snail!
 		algorithm.draw(g);
@@ -72,6 +76,7 @@ public class Aquarium extends GFX {
 		fish1X -= 1;
 		fish2X -= 2;
 		fish3X += 4;
+		bubbleSpot -= 2;
 		
 	
 	}
